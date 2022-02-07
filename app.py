@@ -94,9 +94,9 @@ def patchtankdata(id):
                 tank["long"] = request.json["long"] 
             if "percentage_full" in request.json:
                 tank["percentage_full"] = request.json["percentage_full"]
-    for t in FAKETANKDB: 
+    for tank in FAKETANKDB: 
         if tank ["id"] == id:
-            return jsonify(t)
+            return jsonify(tank)
 
 #DELETE TANK  DATA
 @app.route("/data/<int:id>",methods = ["DELETE"])
